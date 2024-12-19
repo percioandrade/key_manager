@@ -1,3 +1,5 @@
+SSH Key Manager 🔑
+
 # About 📝
 SSH Key Manager is a utility script to manage SSH keys and connections to remote servers. Handles both IPv4 and IPv6 addresses, supports key generation, automatic key copying, and custom SSH ports.
 
@@ -7,6 +9,8 @@ SSH Key Manager is a utility script to manage SSH keys and connections to remote
 - Password-based key copying
 - Quiet mode for automation
 - Custom key naming
+
+Manage, generate and connect on server using a key.
 
 - Author 👨‍💻
 - Percio Andrade
@@ -56,3 +60,6 @@ This command will display the top 5 ports with the highest number of connections
 Ensure you have the necessary permissions to run the script as root.
 
 Make sure all required commands are installed on your system.
+
+# License 📄
+This project is licensed under the GNU General Public License v2.0
