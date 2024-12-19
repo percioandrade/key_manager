@@ -1,46 +1,58 @@
-# SSH Key Management Script
+# About 📝
+SSH Key Manager is a utility script to manage SSH keys and connections to remote servers. Handles both IPv4 and IPv6 addresses, supports key generation, automatic key copying, and custom SSH ports.
 
-A handy script for SSH key management to facilitate secure access to your servers.
+- Automatic SSH key generation and management
+- Support for IPv4 and IPv6 addresses
+- Custom SSH port configuration
+- Password-based key copying
+- Quiet mode for automation
+- Custom key naming
 
-## Features
+- Author 👨‍💻
+- Percio Andrade
+- Email: percio@zendev.com.br
+- Website: Zendev : https://zendev.com.br
 
-- Update SSH keys for targeted servers.
-- Specify custom SSH port and SSH key filename.
-- Copy SSH keys to the server with a force option.
-- Quiet mode for automation tools.
-- Validate both IPv4 and IPv6 addresses.
-- Install missing SSH-related commands automatically.
+## Requirements 🛠️
+- ssh-keygen
+- ssh-copy-id
+- ssh
+- sshpass (optional, for password-based auth)
+- ssh-keyscan
 
-## Usage
+## Usage 🚀
 
-```sh
-./key_manager.sh server_ip [OPTIONS]
+```bash
+./key_manager.sh server_ip [-u] [-p password] [-P port] [-c] [-n keyname] [-q]
 ```
 
-### Options
+## Options 🎛️
+- `-server_ip`: IP address of target server (IPv4/IPv6)
+- `-u`: Update existing SSH key
+- `-p` password: Root user password for key copying
+- `-P` port: Custom SSH port (default: 22)
+- `-c`: Force copy SSH key to server
+- `-n` keyname: Custom SSH key filename (default: id_rsa)
+- `-q`: Quiet mode for automation
+- `-h`: Show help message
 
-- **server_ip**: The IP address of the target server.
-- `-u`: Updates the SSH key for the target server.
-- `-p password`: The root user's password (used only with `-c`).
-- `-P port`: The SSH port of the target server (default: 22).
-- `-c`: Forces the copying of the SSH key to the server.
-- `-n keyname`: A custom filename for the SSH key (default: id_rsa).
-- `-q`: Quiet mode: suppresses the output for automation tools.
-- `-h`: Shows the help message and exits.
+## Port - Total Connections (color coded)
+Example 🌟
 
-## Requirements
+```bash
+# Basic usage with IPv4
+./key_manager.sh 192.168.1.100
 
-The script automatically checks for the presence of necessary commands like `ssh-keygen`, `ssh-copy-id`, `ssh`, `sshpass`, and `ssh-keyscan`, and attempts to install any that are missing.
+# Using custom port and key name
+./key_manager.sh 192.168.1.100 -P 2222 -n custom_key
 
-## Installation
+# Force update with password
+./key_manager.sh 192.168.1.100 -u -p mypassword -c
+```
 
-To get started, copy or clone the script to a file, give it execution permissions with `chmod +x ssh_key_manager.sh`, and run it from the terminal.
+This command will display the top 5 ports with the highest number of connections, refreshing every 10 seconds.
 
-## Support
+## Notes 📌
+Ensure you have the necessary permissions to run the script as root.
 
-For any issues or help using the script, please contact Percio Andrade at:
-- Email: [percio@zendev.com.br](mailto:percio@zedev.com.br)
-
----
-
-This script is provided as-is with no warranty. Use it at your own risk. Contributions and feedback are welcome.
+Make sure all required commands are installed on your system.
