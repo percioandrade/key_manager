@@ -54,8 +54,6 @@ Example 🌟
 ./key_manager.sh 192.168.1.100 -u -p mypassword -c
 ```
 
-This command will display the top 5 ports with the highest number of connections, refreshing every 10 seconds.
-
 ## Notes 📌
 Ensure you have the necessary permissions to run the script as root.
 
